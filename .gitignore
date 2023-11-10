@@ -1,6 +1,5 @@
 venv/
 .DS_Store
-.gitignore
 *.sh
 *.txt
 Procfile
