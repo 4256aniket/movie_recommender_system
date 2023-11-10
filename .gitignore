@@ -1,0 +1,8 @@
+venv/
+
+
+*.sh
+*.txt
+Procfile
+*.pkl
+similarity.pkl
