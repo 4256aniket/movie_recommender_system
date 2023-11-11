@@ -1,11 +1,15 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import numpy as np
 import requests
 
-
-
-# print(response.text)
+st.set_page_config(
+   page_title="Ex-stream-ly Cool App",
+   page_icon="🧊",
+   layout="wide",
+   initial_sidebar_state="expanded",
+)
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?language=en-US"
@@ -41,7 +45,7 @@ similarity = pickle.load(open('similarity.pkl', 'rb'))
 st.title('Movie Recommender System')
 
 selected_movie_name = st.selectbox(
-    'How would you like to be contacted?',
+    'Search for movie you loved watching',
     movies)
 
 if st.button('Show Recommendation'):
@@ -64,3 +68,4 @@ if st.button('Show Recommendation'):
     with col5:
         st.text(recommended_movie_names[4])
         st.image(recommended_movie_posters[4])
+
